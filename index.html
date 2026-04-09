@@ -139,6 +139,12 @@
             letter-spacing: -0.5px;
         }
 
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         nav {
             display: flex;
             gap: 2rem;
@@ -155,6 +161,52 @@
         nav a:hover {
             color: var(--accent-1);
             text-shadow: 0 0 10px var(--glow-1);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .weather-widget {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-main);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         /* Buttons */
@@ -671,13 +723,62 @@
                 bottom: 20px;
             }
 
-            nav {
-                display: none;
+            header {
+                justify-content: space-between;
+                padding: 1rem 1.5rem;
             }
 
-            /* In a real app, add a hamburger menu */
-            header {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-container {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 12, 0.98);
+                border-left: 1px solid var(--border);
+                flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.4s ease;
+                z-index: 999;
+                padding: 2rem;
+            }
+
+            .nav-container.active {
+                right: 0;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .header-right {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .nav-overlay.active {
+                display: block;
+                opacity: 1;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
             }
         }
 
@@ -716,17 +817,27 @@
     <!-- Navigation -->
     <header>
         <a href="#" class="logo">A<span style="color: var(--accent-1)">.</span>Seth</a>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Work</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div style="display:flex; align-items:center; gap: 1.5rem;">
-            <div id="weather"
-                style="font-size: 0.85rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 0.4rem 0.8rem; border-radius: 100px; border: 1px solid var(--border);">
-                Loading weather...</div>
-            <a href="#contact" class="btn" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Let's Talk</a>
+
+        <div class="nav-overlay" id="nav-overlay"></div>
+        <div class="nav-container" id="nav-container">
+            <nav>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Work</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-right">
+                <div id="weather" class="weather-widget">
+                    Loading weather...</div>
+                <a href="#contact" class="btn nav-link" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Let's
+                    Talk</a>
+            </div>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>
 
@@ -1186,6 +1297,39 @@
 
         // Generate one playlist on page load
         generatePlaylist();
+
+        // Mobile Menu Logic
+        const hamburger = document.getElementById('hamburger');
+        const navContainer = document.getElementById('nav-container');
+        const navOverlay = document.getElementById('nav-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navContainer.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            if (navContainer.classList.contains('active')) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        if (hamburger) {
+            hamburger.addEventListener('click', toggleMenu);
+        }
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', toggleMenu);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navContainer.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
     </script>
 </body>
 
