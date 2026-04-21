@@ -13,15 +13,15 @@
     <style>
         :root {
             --bg: #050505;
-            --surface: rgba(20, 20, 24, 0.6);
-            --surface-hover: rgba(40, 40, 48, 0.8);
+            --surface: rgba(24, 18, 20, 0.6);
+            --surface-hover: rgba(48, 36, 40, 0.8);
             --border: rgba(255, 255, 255, 0.08);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --accent-1: #38bdf8;
-            --accent-2: #818cf8;
-            --glow-1: rgba(56, 189, 248, 0.5);
-            --glow-2: rgba(129, 140, 248, 0.5);
+            --accent-1: #ec4899;
+            --accent-2: #be185d;
+            --glow-1: rgba(236, 72, 153, 0.5);
+            --glow-2: rgba(190, 24, 93, 0.5);
         }
 
         * {
@@ -48,8 +48,8 @@
             height: 100vh;
             z-index: -1;
             overflow: hidden;
-            background: radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 50%),
-                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.08), transparent 50%);
+            background: radial-gradient(circle at 15% 50%, rgba(236, 72, 153, 0.08), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(190, 24, 93, 0.08), transparent 50%);
             pointer-events: none;
         }
 
@@ -217,7 +217,7 @@
             position: relative;
             z-index: 1;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.2);
             border: none;
             cursor: pointer;
         }
@@ -241,7 +241,7 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 25px rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 25px rgba(236, 72, 153, 0.4);
         }
 
         .btn-outline {
@@ -256,7 +256,7 @@
 
         .btn-outline:hover {
             border-color: var(--accent-1);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
         }
 
         /* Sections */
@@ -267,12 +267,12 @@
         }
 
         section {
-            padding: 8rem 0;
+            padding: 5rem 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-header h2 {
@@ -397,8 +397,8 @@
 
         .project-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.1);
+            border-color: rgba(236, 72, 153, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(236, 72, 153, 0.1);
             background: var(--surface-hover);
         }
 
@@ -441,7 +441,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 100px;
             color: var(--accent-1);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(236, 72, 153, 0.2);
         }
 
         .project-content h3 {
@@ -491,7 +491,7 @@
         .timeline-item {
             position: relative;
             padding-left: 60px;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .timeline-item::before {
@@ -511,7 +511,7 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 1.5rem;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -562,11 +562,11 @@
         }
 
         .skill-pill:hover {
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(236, 72, 153, 0.1);
             border-color: var(--accent-1);
             color: var(--accent-1);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.15);
         }
 
         /* Footer */
@@ -847,7 +847,7 @@
                 </div>
                 <div class="hero-image-wrapper" style="display: flex; justify-content: center;">
                     <img src="am.png" alt="Amna Seth" class="hero-img"
-                        style="aspect-ratio: 1 / 1; object-fit: cover; max-width: 300px; border-radius: 30px; box-shadow: 0 20px 60px rgba(56, 189, 248, 0.15);">
+                        style="aspect-ratio: 1 / 1; object-fit: cover; max-width: 300px; border-radius: 30px; box-shadow: 0 20px 60px rgba(236, 72, 153, 0.15);">
                     <div class="hero-badge">
                         <div class="icon">UX</div>
                         <div>
@@ -867,27 +867,34 @@
                     <p>Fusing creativity with technical precision to deliver impactful products.</p>
                 </div>
 
-                <div
-                    style="background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; backdrop-filter: blur(10px); max-width: 900px; margin: 0 auto;">
-                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #cbd5e1;">I design thoughtful, inclusive
-                        digital experiences combining UX research, interaction design, and front-end development. Having
-                        worked across NGOs, tech firms, and consulting environments, I excel at delivering accessible
-                        and impactful products tailored to diverse user needs.</p>
-                    <p style="font-size: 1.1rem; color: #cbd5e1;">Currently pursuing an MA in Interactive Digital Media
-                        at Trinity College Dublin. I am also a passionate <strong>musician with an arts
-                            background</strong>.
-                        This helps my artistic and design side deep dive into nuances, bringing about a refreshing
-                        outcome in deliverables.</p>
-                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; align-items: start;">
+                    <!-- Left: Text content -->
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem 2rem; backdrop-filter: blur(10px); height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #cbd5e1;">I design thoughtful, inclusive digital experiences combining UX research, interaction design, and front-end development. Having worked across NGOs, tech firms, and consulting environments, I excel at delivering accessible and impactful products tailored to diverse user needs.</p>
+                        <p style="font-size: 1.1rem; color: #cbd5e1;">Currently pursuing an MA in Interactive Digital Media at Trinity College Dublin. I am also a passionate <strong>musician with an arts background</strong>. This helps my artistic and design side deep dive into nuances, bringing about a refreshing outcome in deliverables.</p>
+                    </div>
 
-                <div
-                    style="background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-top: 2rem; backdrop-filter: blur(10px); max-width: 900px; margin-left: auto; margin-right: auto; text-align: center;">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">🎵 Amu's Random Playlist Generator</h3>
-                    <button onclick="generatePlaylist()" class="btn" style="margin-bottom: 1.5rem;">Shuffle
-                        Playlist</button>
-                    <ul id="playlistSongs"
-                        style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-muted); font-size: 1.05rem;">
-                    </ul>
+                    <!-- Right: Media & Interactive section -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Video Section -->
+                        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; backdrop-filter: blur(10px); text-align: center;">
+                            <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: #f8fafc;">🎬 My Animation Design creation</h3>
+                            <div class="video-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.3);" onclick="togglePlayPause(this.querySelector('video'))">
+                                <video src="Am_belnder.mp4" style="width: 100%; display: block;" loop playsinline></video>
+                                <div class="play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);">
+                                    <svg fill="white" width="24" height="24" viewBox="0 0 24 24" style="margin-left: 4px;"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Music Shuffle -->
+                        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; backdrop-filter: blur(10px); text-align: center;">
+                            <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: #f8fafc;">🎵 Amu's Random Playlist</h3>
+                            <button onclick="generatePlaylist()" class="btn" style="margin-bottom: 1rem; padding: 0.6rem 1.2rem; font-size: 0.9rem;">Shuffle Playlist</button>
+                            <ul id="playlistSongs" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; color: var(--text-muted); font-size: 0.95rem;">
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -991,7 +998,8 @@
                             <span class="timeline-date">2025 - 2026 (Ongoing)</span>
                             <h3>MA Interactive Digital Media</h3>
                             <h4>Trinity College Dublin, Ireland</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Currently pursuing advanced studies focusing on interactive design, digital narratives, and modern UI/UX methodologies.</p>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Currently pursuing advanced studies
+                                focusing on interactive design, digital narratives, and modern UI/UX methodologies.</p>
                         </div>
                     </div>
 
@@ -1001,7 +1009,10 @@
                             <span class="timeline-date">Nov 2023 – Jun 2025</span>
                             <h3>Associate Design Consultant</h3>
                             <h4>Saksham Trust | New Delhi, India</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Led end-to-end UX/UI development of an accessible mobile app for visually impaired users. Bridged design and engineering using front-end coding while spearheading user research and accessibility compliance strategies.</p>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Led end-to-end UX/UI development of
+                                an accessible mobile app for visually impaired users. Bridged design and engineering
+                                using front-end coding while spearheading user research and accessibility compliance
+                                strategies.</p>
                         </div>
                     </div>
 
@@ -1011,7 +1022,9 @@
                             <span class="timeline-date">Jun 2022 – Oct 2022</span>
                             <h3>Associate Vice President</h3>
                             <h4>Steinbach & Partner | Pune, India</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Managed corporate website design and technical upkeep. Delivered innovative front-end design solutions and provided strategic design consultancy to executive leadership.</p>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Managed corporate website design
+                                and technical upkeep. Delivered innovative front-end design solutions and provided
+                                strategic design consultancy to executive leadership.</p>
                         </div>
                     </div>
 
@@ -1021,7 +1034,9 @@
                             <span class="timeline-date">Jun 2018 – Jun 2022</span>
                             <h3>Associate Consultant</h3>
                             <h4>Nihilent Technologies Pvt. Ltd | Pune, India</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Created high-fidelity UI/UX prototypes for enterprise applications. Revamped web properties, conducted iterative A/B testing, and presented interactive front-end mockups to key stakeholders.</p>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Created high-fidelity UI/UX
+                                prototypes for enterprise applications. Revamped web properties, conducted iterative A/B
+                                testing, and presented interactive front-end mockups to key stakeholders.</p>
                         </div>
                     </div>
 
@@ -1031,9 +1046,12 @@
                             <span class="timeline-date">2010 - 2020</span>
                             <h3>Earlier Education & Certifications</h3>
                             <h4>Various Institutions</h4>
-                            <ul style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.6;">
-                                <li style="margin-bottom: 0.2rem"><strong>MIT Emeritus (2019-2020):</strong> Innovation of Products & Services</li>
-                                <li style="margin-bottom: 0.2rem"><strong>Anglia Ruskin Univ. (2016-2018):</strong> MA Early Education</li>
+                            <ul
+                                style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.6;">
+                                <li style="margin-bottom: 0.2rem"><strong>MIT Emeritus (2019-2020):</strong> Innovation
+                                    of Products & Services</li>
+                                <li style="margin-bottom: 0.2rem"><strong>Anglia Ruskin Univ. (2016-2018):</strong> MA
+                                    Early Education</li>
                                 <li><strong>Flame University (2010-2014):</strong> Bachelor of Arts</li>
                             </ul>
                         </div>
@@ -1069,7 +1087,7 @@
         <section id="contact" style="padding-bottom: 4rem;">
             <div class="container">
                 <div
-                    style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1)); border: 1px solid var(--border); border-radius: 24px; padding: 4rem 2rem; text-align: center; backdrop-filter: blur(10px);">
+                    style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(190, 24, 93, 0.1)); border: 1px solid var(--border); border-radius: 24px; padding: 4rem 2rem; text-align: center; backdrop-filter: blur(10px);">
                     <h2 class="gradient-text" style="font-size: 3rem; margin-bottom: 1rem;">Let's Build Something Great
                     </h2>
                     <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">I'm
@@ -1323,6 +1341,18 @@
                 }
             });
         });
+
+        // Video Play/Pause Logic
+        function togglePlayPause(video) {
+            const overlay = video.parentElement.querySelector('.play-overlay');
+            if (video.paused) {
+                video.play();
+                overlay.style.opacity = '0';
+            } else {
+                video.pause();
+                overlay.style.opacity = '1';
+            }
+        }
     </script>
 </body>
 
