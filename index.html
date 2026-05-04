@@ -1182,10 +1182,10 @@
 
         // Project Slideshow Logic
         const sakshamSlides = [];
-        for (let i = 1; i <= 24; i++) sakshamSlides.push(${i}_S.png);
+        for (let i = 1; i <= 24; i++) sakshamSlides.push(`${i}_S.png`);
 
         const emoscapeSlides = [];
-        for (let i = 1; i <= 10; i++) emoscapeSlides.push(0${i}_E.png);
+        for (let i = 1; i <= 10; i++) emoscapeSlides.push(`0${i}_E.png`);
 
         const trinitySlides = [
             'T_1.png', 'T_1.1.png', 'T_2.png', 'T_3.png', 'T_4.png', 'T_5.png',
@@ -1301,7 +1301,7 @@
 
             for (const song of playlist) {
                 const li = document.createElement("li");
-                li.innerHTML = <span style="color: var(--text-main); font-weight: 500;">${song.title}</span> by ${song.artist} <span style="font-size: 0.8rem; background: rgba(255,255,255,0.05); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; border: 1px solid var(--border);">${song.genre}</span>;
+                li.innerHTML = `<span style="color: var(--text-main); font-weight: 500;">${song.title}</span> by ${song.artist} <span style="font-size: 0.8rem; background: rgba(255,255,255,0.05); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; border: 1px solid var(--border);">${song.genre}</span>`;
                 listElement.appendChild(li);
             }
         }
