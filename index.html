@@ -4,243 +4,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amna Seth | User Experience Designer/ Portfolio</title>
-
+    <title>Amna Seth | User experience Designer/ Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
-
     <style>
-        /* KEEPING YOUR ENTIRE STYLING UNCHANGED */
-        /* (No visual edits made as requested) */
+        :root {
+            --bg: #050505;
+            --surface: rgba(24, 18, 20, 0.6);
+            --surface-hover: rgba(48, 36, 40, 0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-1: #ec4899;
+            --accent-2: #be185d;
+            --glow-1: rgba(236, 72, 153, 0.5);
+            --glow-2: rgba(190, 24, 93, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 15% 50%, rgba(236, 72, 153, 0.08), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(190, 24, 93, 0.08), transparent 50%);
+            pointer-events: none;
+        }
+
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-1);
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-2);
+            bottom: -200px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.2); }
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--text-main) 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-accent {
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 12, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            border-radius: 100px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Ambient Background (UNCHANGED) -->
-    <div class="ambient-bg">
-        <div class="ambient-orb orb-1"></div>
-        <div class="ambient-orb orb-2"></div>
+<header>
+    <a href="#" class="logo">A.Seth</a>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn">Let's Talk</a>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container">
+        <h1>Crafting Digital Experiences</h1>
+        <p>I'm Amna Seth, a UX/UI & Digital Media Designer.</p>
     </div>
+</section>
 
-    <!-- Navigation (UNCHANGED STRUCTURE) -->
-    <header>
-        <a href="#" class="logo">A<span style="color: var(--accent-1)">.</span>Seth</a>
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I design thoughtful, inclusive digital experiences.</p>
+    </div>
+</section>
 
-        <div class="nav-overlay" id="nav-overlay"></div>
+<section id="projects">
+    <div class="container">
+        <h2>Featured Work</h2>
+    </div>
+</section>
 
-        <div class="nav-container" id="nav-container">
-            <nav>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Work</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
+<section id="experience">
+    <div class="container">
+        <h2>My Journey</h2>
+    </div>
+</section>
 
-            <div class="header-right">
-                <a href="#contact" class="btn nav-link" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
-                    Let's Talk
-                </a>
-            </div>
-        </div>
+<section id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+    </div>
+</section>
 
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
-    </header>
-
-    <main>
-
-        <!-- HERO (UPDATED POSITIONING) -->
-        <section class="hero" id="home">
-            <div class="container hero-grid">
-
-                <div class="hero-content">
-
-                    <h1>
-                        Designing <br>
-                        <span class="gradient-text-accent" id="typed-text">
-                            Human-Centred Digital Systems
-                        </span>
-                    </h1>
-
-                    <p>
-                        I am a UX/UI and Interaction Designer with 5+ years of experience designing accessible,
-                        research-driven digital products across enterprise and impact-led environments.
-                        I specialise in translating complex user and business needs into scalable,
-                        intuitive product experiences through collaboration with cross-functional teams.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn">Explore Selected Work</a>
-                        <a href="#about" class="btn btn-outline">View Background</a>
-                    </div>
-
-                </div>
-
-                <div class="hero-image-wrapper" style="display: flex; justify-content: center;">
-                    <img src="am.png" alt="Amna Seth" class="hero-img"
-                        style="aspect-ratio: 1 / 1; object-fit: cover; max-width: 300px; border-radius: 30px;">
-
-                    <div class="hero-badge">
-                        <div class="icon">UX</div>
-                        <div>
-                            <div style="font-weight: 700; font-size: 1.1rem">5+ Years</div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted)">Experience</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ABOUT (UPGRADED TONE) -->
-        <section id="about">
-            <div class="container">
-
-                <div class="section-header">
-                    <h2 class="gradient-text">About Me</h2>
-                    <p>Fusing research, systems thinking, and design execution to build meaningful digital products.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-
-                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem 2rem;">
-                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #cbd5e1;">
-                            I design and build inclusive digital experiences by combining UX research,
-                            interaction design, and front-end implementation. My work spans NGOs, enterprise systems,
-                            and consulting environments, with a focus on accessibility, usability, and product scalability.
-                        </p>
-
-                        <p style="font-size: 1.1rem; color: #cbd5e1;">
-                            Currently pursuing an MA in Interactive Digital Media at Trinity College Dublin,
-                            I bring a multidisciplinary perspective shaped by design, technology, and creative practice.
-                            My approach is grounded in systems thinking and accessible, human-centred design outcomes.
-                        </p>
-                    </div>
-
-                    <div>
-                        <!-- unchanged media section -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS HEADER (UPGRADED) -->
-        <section id="projects">
-            <div class="container">
-
-                <div class="section-header">
-                    <h2 class="gradient-text">Selected Work</h2>
-                    <p>Interaction and UX projects demonstrating end-to-end design thinking, research, and implementation across real-world systems.</p>
-                </div>
-
-                <div class="projects-grid">
-
-                    <!-- PROJECT 1 (Saksham UPGRADED COPY) -->
-                    <div class="project-card">
-
-                        <div class="project-img-wrapper" onclick="openModal('saksham')">
-                            <img src="1_S.png" class="project-img">
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-tags">
-                                <span class="tag">UX/UI</span>
-                                <span class="tag">Accessibility</span>
-                            </div>
-
-                            <h3>Saksham App</h3>
-
-                            <p>
-                                Led end-to-end UX and interaction design for an accessibility-first mobile application
-                                designed for visually impaired users. Work included user research, journey mapping,
-                                prototyping, and collaboration with engineering teams to ensure assistive technology
-                                integration and WCAG-aligned accessibility outcomes.
-                            </p>
-
-                            <div class="project-links">
-                                <a href="javascript:void(0);" onclick="openModal('saksham')" class="btn">
-                                    Case Slides
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- PROJECT 2 unchanged except tone kept -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper" onclick="openModal('emoscape')">
-                            <img src="01_E.png" class="project-img">
-                        </div>
-
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span class="tag">Dashboard</span>
-                                <span class="tag">Analytics</span>
-                            </div>
-
-                            <h3>Emoscape - Nihilent</h3>
-
-                            <p>
-                                Designed a high-performance analytics dashboard for enterprise users,
-                                focusing on simplifying complex data interactions and improving decision-making
-                                workflows through scalable UI structures and usability testing.
-                            </p>
-
-                            <div class="project-links">
-                                <a href="javascript:void(0);" onclick="openModal('emoscape')" class="btn">
-                                    Case Slides
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PROJECT 3 unchanged tone light refinement -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper" onclick="openModal('trinity')">
-                            <img src="T_1.png" class="project-img">
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-tags">
-                                <span class="tag">UX Research</span>
-                                <span class="tag">Design Thinking</span>
-                            </div>
-
-                            <h3>Trinity Campus Map</h3>
-
-                            <p>
-                                Redesign of a campus navigation system using user research and iterative prototyping
-                                to simplify spatial complexity and improve usability for students and visitors.
-                            </p>
-
-                            <div class="project-links">
-                                <a href="javascript:void(0);" onclick="openModal('trinity')" class="btn">Case Slides</a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE + REST UNCHANGED -->
-        <!-- (No structural edits made beyond wording improvements above) -->
-
-    </main>
+</main>
 
 </body>
 </html>
-      
-           
-          
-        
